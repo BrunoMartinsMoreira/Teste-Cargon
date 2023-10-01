@@ -21,7 +21,8 @@ class PrimeNumbersGenerator {
     let index = 2;
     while (index < order && isPrime) {
       while (this.multipliersList[index] < candidate) {
-        this.multipliersList[index] += this.primesList[index] + this.primesList[index];
+        this.multipliersList[index] +=
+          this.primesList[index] + this.primesList[index];
       }
       if (this.multipliersList[index] === candidate) {
         isPrime = false;
@@ -56,14 +57,20 @@ class PrimeNumbersGenerator {
     this.currentOffset = 1;
     while (this.currentOffset <= this.maxNumber) {
       console.log("Page ", this.currentPage);
-      for (let rowOffset = this.currentOffset; rowOffset <= this.currentOffset + this.rowsPerPage - 1; rowOffset++) {
+      for (
+        let rowOffset = this.currentOffset;
+        rowOffset <= this.currentOffset + this.rowsPerPage - 1;
+        rowOffset++
+      ) {
         let primesRow = [];
         for (let column = 0; column < this.columnsPerPage; column++) {
           if (rowOffset + column * this.rowsPerPage <= this.maxNumber) {
-            primesRow.push(this.primesList[rowOffset + column * this.rowsPerPage]);
+            primesRow.push(
+              this.primesList[rowOffset + column * this.rowsPerPage]
+            );
           }
         }
-        console.log(primesRow.join('|'));
+        console.log(primesRow.join("|"));
       }
       this.currentPage++;
       this.currentOffset += this.rowsPerPage * this.columnsPerPage;
