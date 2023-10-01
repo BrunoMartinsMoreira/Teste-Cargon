@@ -1,7 +1,7 @@
-import Button from "../Button";
-import "./Recommended.css";
+import Button from "../Button/Button";
+import "./Brands.css";
 
-const Recommended = ({ handleClick }) => {
+const Brands = ({ handleClick, selectedBrand }) => {
   const filterOptions = [
     {
       value: "",
@@ -31,6 +31,9 @@ const Recommended = ({ handleClick }) => {
               onClickHandler={handleClick}
               value={option.value}
               title={option.title}
+              className={
+                selectedBrand === option.value ? "btnsSelected" : "btns"
+              }
             />
           ))}
         </div>
@@ -39,4 +42,4 @@ const Recommended = ({ handleClick }) => {
   );
 };
 
-export default Recommended;
+export default Brands;

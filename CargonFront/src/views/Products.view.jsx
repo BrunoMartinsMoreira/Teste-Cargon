@@ -3,13 +3,12 @@ import { useState } from "react";
 import Navigation from "../components/Navigation/Nav";
 import Products from "../components/Products/Products";
 import products from "../data.json";
-import Recommended from "../components/Recommended/Recommended";
+import Brands from "../components/Brands/Brands";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Card from "../components/Card/Card";
-import "./index.css";
 
 function ProductsView() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState(null);
 
   const [query, setQuery] = useState("");
 
@@ -22,11 +21,11 @@ function ProductsView() {
   );
 
   const handleChange = (event) => {
-    setSelectedCategory(event.target.value);
+    setSelectedBrand(event.target.value);
   };
 
   const handleClick = (event) => {
-    setSelectedCategory(event.target.value);
+    setSelectedBrand(event.target.value);
   };
 
   function filteredData(products, selected, query) {
@@ -52,13 +51,13 @@ function ProductsView() {
     ));
   }
 
-  const result = filteredData(products, selectedCategory, query);
+  const result = filteredData(products, selectedBrand, query);
 
   return (
     <>
-      <Sidebar handleChange={handleChange} selectedValue={selectedCategory} />
+      <Sidebar handleChange={handleChange} selectedValue={selectedBrand} />
       <Navigation query={query} handleInputChange={handleInputChange} />
-      <Recommended handleClick={handleClick} />
+      <Brands selectedBrand={selectedBrand} handleClick={handleClick} />
       <Products result={result} />
     </>
   );

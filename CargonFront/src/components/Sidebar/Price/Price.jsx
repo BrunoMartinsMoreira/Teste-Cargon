@@ -6,10 +6,6 @@ const Price = ({ handleChange, selectedValue }) => {
 
   const filterOptions = [
     {
-      value: "",
-      title: "Todos",
-    },
-    {
       value: 150,
       title: "Até R$ 150",
     },
@@ -30,6 +26,16 @@ const Price = ({ handleChange, selectedValue }) => {
     <>
       <div className="ml">
         <h2 className="sidebar-title price-title">Preço</h2>
+        <label className="sidebar-label-container">
+          <input
+            checked={selectedValue === ""}
+            onChange={handleChange}
+            type="radio"
+            value=""
+            name="test"
+          />
+          <span className="checkmark"></span>Todos
+        </label>
 
         {filterOptions.map((option, index) => (
           <Input

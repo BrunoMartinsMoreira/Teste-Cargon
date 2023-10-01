@@ -6,10 +6,6 @@ const Size = ({ handleChange, selectedValue }) => {
 
   const filterOptions = [
     {
-      value: "",
-      title: "Todos",
-    },
-    {
       value: "XPP",
       title: "XPP",
     },
@@ -38,6 +34,16 @@ const Size = ({ handleChange, selectedValue }) => {
     <>
       <div className="ml">
         <h2 className="sidebar-title price-title">Tamanho</h2>
+        <label className="sidebar-label-container">
+          <input
+            checked={!selectedValue}
+            onChange={handleChange}
+            type="radio"
+            value=""
+            name="test"
+          />
+          <span className="checkmark"></span>Todos
+        </label>
 
         {filterOptions.map((option, index) => (
           <Input

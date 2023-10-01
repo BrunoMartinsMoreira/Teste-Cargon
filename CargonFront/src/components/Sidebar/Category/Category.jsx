@@ -4,10 +4,6 @@ import Input from "../../Input";
 function Category({ handleChange, selectedValue }) {
   const filterOptions = [
     {
-      value: "",
-      title: "Todos",
-    },
-    {
       value: "Camiseta",
       title: "Camiseta",
     },
@@ -27,7 +23,16 @@ function Category({ handleChange, selectedValue }) {
   return (
     <div>
       <h2 className="sidebar-title">Categoria</h2>
-
+      <label className="sidebar-label-container">
+        <input
+          checked={!selectedValue}
+          onChange={handleChange}
+          type="radio"
+          value=""
+          name="test"
+        />
+        <span className="checkmark"></span>Todos
+      </label>
       <div>
         {filterOptions.map((option, index) => (
           <Input
