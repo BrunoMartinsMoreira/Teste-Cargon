@@ -1,0 +1,61 @@
+
+.card {
+  margin: 20px;
+  border: 2px solid #ededed;
+  padding: 20px;
+  cursor: pointer;
+  width: 30vw;
+}
+
+.card-img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.price{
+  font-family: 'IBM Plex Sans';
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.card-reviews {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.rating-star {
+  color: #d5ab55;
+}
+
+.total-reviews {
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bag-icon {
+  color: #535353;
+}
+
+.sizes_container{
+  display: flex;
+  margin-top: .7rem;
+  align-items: center;
+}
+.size_item{
+  padding: 2px 10px;
+  background-color: rgb(234, 238, 238);
+  border-radius: 3px;
+  border: 1px solid gray;
+  margin-left: 2px;
+}
